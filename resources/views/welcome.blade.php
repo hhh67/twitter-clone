@@ -2,11 +2,19 @@
 
 @section('content')
 
-    <div class="center jumbotron">
-        <div class="text-center">
-            <h1>Welcome to the Microposts</h1>
-            {!! link_to_route('signup.get', 'Sign up now !', [], ['class' => 'btn btn-lg btn-primary mt-3']) !!}
+    @if (Auth::check())
+    
+        {{ Auth::user()->name }}
+    
+    @else
+    
+        <div class="center jumbotron">
+            <div class="text-center">
+                <h1>Welcome to the Microposts</h1>
+                {!! link_to_route('signup.get', 'Sign up now !', [], ['class' => 'btn btn-lg btn-primary mt-3']) !!}
+            </div>
         </div>
-    </div>
+    
+    @endif
 
 @endsection
