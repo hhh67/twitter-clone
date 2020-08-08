@@ -13,12 +13,12 @@
             
                 <div class="form-group">
                     {!! Form::label('name', 'Name') !!}
-                    {!! Form::text('name', old('name'), ['class' => 'form-control']) !!}
+                    {!! Form::text('name', null, ['class' => 'form-control']) !!}
                 </div>
                 
                 <div class="form-group">
                     {!! Form::label('email', 'Email') !!}
-                    {!! Form::email('email', old('email'), ['class' => 'form-control']) !!}
+                    {!! Form::email('email', null, ['class' => 'form-control']) !!}
                 </div>
                 
                 <div class="form-group">
