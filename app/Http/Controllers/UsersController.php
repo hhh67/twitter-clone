@@ -27,7 +27,7 @@ class UsersController extends Controller
         // $user->microposts_countに格納される
         $user->loadRelationshipCounts();
         
-        $microposts = $user->microposts()->orderBy('created_at', 'desc')->paginate(10);
+        $microposts = $user->feed_microposts()->orderBy('created_at', 'desc')->paginate(10);
         
         return view('users.show', [
                 'user' => $user,

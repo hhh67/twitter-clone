@@ -1,7 +1,10 @@
 <header class="mb-4">
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-        <a class="navbar-brand" href='/'>Microposts</a>
-        
+        @if (Auth::check())
+            <a class="navbar-brand" href='{{ route('users.show', ['user' => Auth::user()->id]) }}'>Microposts</a>
+        @else
+            <a class="navbar-brand" href='/'>Microposts</a>
+        @endif
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-bar">
             <span class="navbar-toggler-icon"></span>
         </button>
